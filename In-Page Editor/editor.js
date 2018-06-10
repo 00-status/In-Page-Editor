@@ -21,6 +21,9 @@
 
     function setViewMode()
     {
+        // change the edit button's text to be 'edit'
+        $("#edit").text("Edit");
+
         // Grab the current contents of the page
         var title = $("#title").val();
         var content = $("#content").val();
@@ -43,6 +46,9 @@
 
     function setEditMode()
     {
+        // change the edit button's text to be 'save'
+        $("#edit").text("Save");
+
         // Grab the current contents of the page
         var title = $("#title").text();
         var content = $("#contentContainer").children();
