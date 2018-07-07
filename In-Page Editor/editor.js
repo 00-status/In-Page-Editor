@@ -25,8 +25,8 @@
         $("#edit").text("Edit");
 
         // Grab the current contents of the page
-        var title = $("#title").val();
-        var content = $("#content").val();
+        var title = escapeHTML( $("#title").val() );
+        var content = escapeHTML( $("#content").val() );
 
         // Replace the title text box with a header
         var titleHtml = '<h1 id="title" class="header">' + title + '</h1>';
@@ -39,7 +39,11 @@
         // Loop through the paragraphs and add their html
         for (var i = 0; i < paragraphs.length; i++)
         {
-            contentHtml += '<p class="content">' + paragraphs[i] + '</p>';
+            console.log(paragraphs[i]);
+            if (paragraphs[i] !== "")
+            {
+                contentHtml += '<p class="content">' + paragraphs[i] + '</p>';
+            }
         }
         $("#contentContainer").html(contentHtml);
     }
@@ -58,15 +62,18 @@
         $("#titleContainer").html(titleHtml);
         // Setting the value of the textbox here.
         // Had issues with quotes when doing it in the line above.
-        $("#title").val(escapeHTML(title));
+        $("#title").val(title);
 
         // Replace the content with a text area
         var contentHtml = '<div class="ui form"> <div class="field"> <textarea id="content">';
         // loop through each paragraph and grab the text from them.
         for (var i = 0; i < content.length; i++)
         {
-            contentHtml += escapeHTML(content[i].innerText) + "\n";
+                contentHtml += content[i].innerText + "\n";
         }
+
+        // Remove the last new line
+        contentHtml = contentHtml.replace(/\n$/, "");
 
         contentHtml += '</textarea> </div> </div>';
         $("#contentContainer").html(contentHtml);
