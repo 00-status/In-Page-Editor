@@ -2,12 +2,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Name>In-Page Editor</Name>
-    <ProjectGuid>{eed852e8-1389-446e-8275-d1b8f3ded534}</ProjectGuid>
+    <ProjectGuid>{1a823bac-d4d1-42bf-9272-c4ff34c8688d}</ProjectGuid>
     <RootNamespace>
     </RootNamespace>
     <OutputType>Library</OutputType>
     <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
-    <RuntimeVersion>7.1</RuntimeVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <IncludeDebugInformation>true</IncludeDebugInformation>
@@ -16,7 +15,7 @@
     <IncludeDebugInformation>false</IncludeDebugInformation>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="editor.js" />
-    <Content Include="index.html" />
+    <Compile Include="editor.js" />
+    <Compile Include="index.html" />
   </ItemGroup>
 </Project>
